@@ -13,7 +13,7 @@ class teacherController extends Controller
         return view('indexteacher', compact('teachers'));
     }
     public function create(){
-        return view('create');
+        return view('Createteacher');
     }
     public function store(Request $request){
         $request-> validate([
@@ -25,10 +25,10 @@ class teacherController extends Controller
             'NivelEstudio' =>'required'
         ]);
         teacher::create($request->post());
-        return redirect()->route('teacher.index')->with('Confirmado', 'Registro Agregado Con Exito');
+        return redirect()->route('teacher.index')->with('Confirmado', 'Registro Agregado Con Éxito');
     }
     public function edit(teacher $teacher){
-        return view('edit',compact('teacher'));
+        return view('Editteacher',compact('teacher'));
     }
     public function update(Request $request){
         $request-> validate([
@@ -42,8 +42,8 @@ class teacherController extends Controller
         teacher::fill($request->post())->save();
         return redirect()->route('teacher.index')->with('Confirmado', 'Registro Actualizado Con Exito');
     }
-    public function delete(teacher $teacher){
-        $student->delete();
-        return redirect()->route('teacher.index')->with('Confirmacion', 'Registro Eliminado Con Exito');
-    }
+    public function destroy(teacher $teacher){
+        $teacher->delete();
+        return redirect()->route('teacher.index')->with('Confirmacion', 'Registro Eliminado Con Éxito');
+    }    
 }

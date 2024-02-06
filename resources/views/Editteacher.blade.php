@@ -39,34 +39,43 @@
 </head> 
 <body>
     <div class="container">
-        <h2>Edit Student</h2>
-        <form action="{{ route('students.store') }}" method="POST">
+        <h2>Edit Teacher</h2>
+        <form action="{{ route('teacher.update', $teacher->id) }}" method="PUT">
             @csrf
 
+            
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" name="Nombre" required>
             </div>
+
             <div class="form-group">
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" class="form-control" id="apellidos" name="Apellidos" required>
-        </div>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" class="form-control" id="apellidos" name="Apellidos" required>
+            </div>
 
-        <div class="form-group">
-            <label for="nombre">Direccion:</label>
-            <input type="text" class="form-control" id="nombre" name="Nombre" required>
-        </div>
+            <div class="form-group">
+                <label for="direccion">Direccion:</label>
+                <input type="text" class="form-control" id="direccion" name="Direccion" required>
+            </div>
 
-        <div class="form-group">
-            <label for="apellidos">Telefono:</label>
-            <input type="text" class="form-control" id="apellidos" name="Apellidos" required>
-        </div>
-        <div class="form-group">
-            <label for="nombre">Email:</label>
-            <input type="text" class="form-control" id="nombre" name="Nombre" required>
-        </div>
-            <a  class="btn btn-primary btn-block">Actualizar</a>
-            <a href="{{ route('students.index') }}" class="btn btn-danger btn-block mt-2">Regresar a Estudiante</a>
+            <div class="form-group">
+                <label for="telefono">Telefono:</label>
+                <input type="text" class="form-control" id="telefono" name="Telefono" required>
+            </div>
+
+            <div class="form-group">
+                <label for="especialidad">Especialidad:</label>
+                <input type="text" class="form-control" id="especialidad" name="Especialidad" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nivelEstudio">NivelEstudio:</label>
+                <input type="text" class="form-control" id="nivelEstudio" name="NivelEstudio" required>
+            </div>
+           
+            <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+            <a href="{{ route('teacher.index') }}" class="btn btn-danger btn-block mt-2">Regresar a Maestro</a>
 
         </form>
     </div>

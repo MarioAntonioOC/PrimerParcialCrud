@@ -27,7 +27,7 @@ class studentController extends Controller
         return redirect()->route('students.index')->with('Confirmado', 'Registro Agregado Con Exito');
     }
     public function edit(students $student){
-        return view('edit',compact('students'));
+        return view('edit',compact('student'));
     }
     public function update(Request $request){
         $request-> validate([
