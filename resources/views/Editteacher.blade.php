@@ -42,7 +42,6 @@
         <h2>Edit Teacher</h2>
         <form action="{{ route('teacher.update', $teacher->id) }}" method="PUT">
             @csrf
-
             
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
