@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear</title>
-    
+    <title>Editar</title>
     <!-- Agrega el enlace al archivo de estilos de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
@@ -36,42 +35,11 @@
         .form-group {
             margin-bottom: 20px;
         }
-        .logo {
-            width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
-            height: auto;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff; /* Color del texto del menú */
-            font-weight: bold;
-            font-size: 16px;
-        }
     </style>
-</head>
+</head> 
 <body>
-<div class="header">
-    <img src="ruta/al/logo.png" alt="Logo UTRNG" class="logo">
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Programas Académicos</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-</div>
     <div class="container">
-        <h2>Create student</h2>
+        <h2>Edit Student</h2>
         <form action="{{ route('students.store') }}" method="POST">
             @csrf
 
@@ -97,9 +65,7 @@
             <label for="nombre">Email:</label>
             <input type="text" class="form-control" id="nombre" name="Nombre" required>
         </div>
-
-            <!-- Repite la estructura para los otros campos -->
-            <a href="{{ route('students.store') }}" class="btn btn-primary btn-block">Crear Estudiante</a>
+            <a  class="btn btn-primary btn-block">Actualizar</a>
             <a href="{{ route('students.index') }}" class="btn btn-danger btn-block mt-2">Regresar a Estudiante</a>
 
         </form>

@@ -40,37 +40,38 @@
 <body>
     <div class="container">
         <h2>Edit Teacher</h2>
-        <form action="{{ route('teacher.update', $teacher->id) }}" method="PUT">
+        <form action="{{ route('teacher.update', $teacher->id) }}" method="POST">
             @csrf
+            @method('PUT')
             
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="Nombre" required>
+                <input type="text" class="form-control" id="nombre" name="Nombre" value="{{ $teacher->Nombre }}" required>
             </div>
 
             <div class="form-group">
                 <label for="apellidos">Apellidos:</label>
-                <input type="text" class="form-control" id="apellidos" name="Apellidos" required>
+                <input type="text" class="form-control" id="apellidos" name="Apellidos" value="{{ $teacher->Apellidos }}" required>
             </div>
 
             <div class="form-group">
                 <label for="direccion">Direccion:</label>
-                <input type="text" class="form-control" id="direccion" name="Direccion" required>
+                <input type="text" class="form-control" id="direccion" name="Direccion" value="{{ $teacher->Direccion }}" required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Telefono:</label>
-                <input type="text" class="form-control" id="telefono" name="Telefono" required>
+                <input type="text" class="form-control" id="telefono" name="Telefono" value="{{ $teacher->Telefono }}" required>
             </div>
 
             <div class="form-group">
                 <label for="especialidad">Especialidad:</label>
-                <input type="text" class="form-control" id="especialidad" name="Especialidad" required>
+                <input type="text" class="form-control" id="especialidad" name="Especialidad" value="{{ $teacher->Especialidad }}" required>
             </div>
 
             <div class="form-group">
                 <label for="nivelEstudio">NivelEstudio:</label>
-                <input type="text" class="form-control" id="nivelEstudio" name="NivelEstudio" required>
+                <input type="text" class="form-control" id="nivelEstudio" name="NivelEstudio" value="{{ $teacher->NivelEstudio }}" required>
             </div>
            
             <button type="submit" class="btn btn-primary btn-block">Actualizar</button>

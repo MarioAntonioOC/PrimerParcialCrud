@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class teacherController extends Controller
 {
-   
     public function index(){
         $teachers = teacher::orderBy('id', 'desc')->paginate(10);
         return view('indexteacher', compact('teachers'));
@@ -30,7 +29,7 @@ class teacherController extends Controller
     public function edit(teacher $teacher){
         return view('Editteacher',compact('teacher'));
     }
-    public function update(Request $request){
+    public function update(Request $request, teacher $teacher){
         $request-> validate([
             'Nombre'=>'required',
             'Apellidos'=>'required',
@@ -39,8 +38,8 @@ class teacherController extends Controller
             'Especialidad'=>'required',
             'NivelEstudio' =>'required'
         ]);
-        teacher::fill($request->post())->save();
-        return redirect()->route('teacher.index')->with('Confirmado', 'Registro Actualizado Con Exito');
+        $teacher->update($request->all());
+        return redirect()->route('teacher.index')->with('Confirmado', 'Registro Actualizado Con Éxito');
     }
     public function destroy(teacher $teacher){
         $teacher->delete();
