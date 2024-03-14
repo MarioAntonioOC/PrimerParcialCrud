@@ -45,4 +45,9 @@ class teacherController extends Controller
         $teacher->delete();
         return redirect()->route('teacher.index')->with('Confirmacion', 'Registro Eliminado Con Éxito');
     }    
+    public function show(teacher $teacher)
+{
+    return view('showteacher', compact('teacher'));
+}
+
 }

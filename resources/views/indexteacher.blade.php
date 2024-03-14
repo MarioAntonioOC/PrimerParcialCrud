@@ -50,6 +50,7 @@
                     <form action="{{ route('teacher.destroy', $teacher->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
+                        <a class="btn btn-primary" href="{{ route('teacher.show', $teacher->id) }}">Detalles</a>
                         <a class="btn btn-primary" href="{{ route('teacher.edit', $teacher->id) }}">Edit</a>
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
@@ -60,6 +61,9 @@
         </table>
 </div>
     </div>
+    <div class="mt-4">
+            <a class="btn btn-secondary" href="{{ url('/') }}">Regresar a Welcome</a>
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

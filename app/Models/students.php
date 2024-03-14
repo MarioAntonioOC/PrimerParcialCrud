@@ -9,9 +9,9 @@ class students extends Model
 {
     use HasFactory;
 
-    protected $table='students';
-    protected $primarykey='id';
-    protected $fileable=[
+    protected $table = 'students';
+    protected $primaryKey = 'id';
+    protected $fillable = [
         'Nombre',
         'Apellidos',
         'Direccion',

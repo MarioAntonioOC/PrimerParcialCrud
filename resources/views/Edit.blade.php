@@ -40,32 +40,34 @@
 <body>
     <div class="container">
         <h2>Edit Student</h2>
-        <form action="{{ route('students.store') }}" method="POST">
+        <form >
             @csrf
-
+            @method('PUT')
+            
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="Nombre" required>
+                <input type="text" class="form-control" id="nombre" name="Nombre" value="{{ $student->Nombre }}" required>
             </div>
+
             <div class="form-group">
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" class="form-control" id="apellidos" name="Apellidos" required>
-        </div>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" class="form-control" id="apellidos" name="Apellidos" value="{{ $student->Apellidos }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Direccion:</label>
+                <input type="text" class="form-control" id="direccion" name="Direccion" value="{{ $student->Direccion }}" required>
+            </div>
 
         <div class="form-group">
-            <label for="nombre">Direccion:</label>
-            <input type="text" class="form-control" id="nombre" name="Nombre" required>
-        </div>
-
+                <label for="telefono">Telefono:</label>
+                <input type="text" class="form-control" id="telefono" name="Telefono" value="{{ $student->Telefono }}" required>
+            </div>
         <div class="form-group">
-            <label for="apellidos">Telefono:</label>
-            <input type="text" class="form-control" id="apellidos" name="Apellidos" required>
-        </div>
-        <div class="form-group">
-            <label for="nombre">Email:</label>
-            <input type="text" class="form-control" id="nombre" name="Nombre" required>
-        </div>
-            <a  class="btn btn-primary btn-block">Actualizar</a>
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" name="Email" value="{{ $student->Email }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
             <a href="{{ route('students.index') }}" class="btn btn-danger btn-block mt-2">Regresar a Estudiante</a>
 
         </form>
